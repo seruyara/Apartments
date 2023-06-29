@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :leases
-  resources :tenants, only:[:index,:show]
+  resources :tenants
   resources :apartments
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
