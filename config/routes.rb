@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  resources :leases
+  resources :apartments do
+    post 'create_tenant', on: :member
+    patch 'update_tenant', on: :member
+    delete 'destroy_tenant', on: :member
+  end
   resources :tenants
-  resources :apartments
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
+  resources :leases, only: [:create, :destroy]
 end
